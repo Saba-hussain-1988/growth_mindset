@@ -54,7 +54,9 @@ if calculate_generate:
         total_obtained_marks = english + urdu + math + science + study + islamiyat + computer +  art 
     
         # percentage
-        percentage = math.floor((total_obtained_marks / total_marks) * 100)
+        percentage = (total_obtained_marks / total_marks) * 100
+        if type(percentage) == "float":
+           percentage = math.floor(percentage)
     
         grade = check_grade(percentage)
         st.header("Result Card")
